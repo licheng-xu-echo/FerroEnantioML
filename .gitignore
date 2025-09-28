@@ -205,5 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# 
 temp/
 gen_TS/
+MolOP-main/

@@ -20,6 +20,13 @@ For semi-quantum calculations:
 - Gaussian 16
 - xTB 6.6.1
 
+To install MolOP, which is used to generate initial guess of TS geometries, please execute the following command:
+```base
+unzip MolOP-main.zip
+cd MolOP-main
+pip install -e .
+```
+
 For result reproduction, please install the required packages (TODO):
 ```bash
 pip install -r requirements.txt
