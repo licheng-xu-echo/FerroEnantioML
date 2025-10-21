@@ -35,7 +35,7 @@ pip install .
 ```
 
 
-For result reproduction, please install the required packages (TODO):
+For result reproduction, please install the required packages:
 ```bash
 pip install -r requirements.txt
 ```
