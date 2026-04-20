@@ -318,3 +318,6 @@ def get_val_score_add_data(model,base_X,base_Y,dest_X,dest_Y,selection_inf,ret_i
             return va_Y,va_P,score_map,base_feat_importance,delta_feat_importance
         else:
             return va_Y,va_P,score_map
+        
+def get_topk_rxn_comb_df(rxn_comb_df,target_col_name="Predict_ddG",topk=10):
+    return rxn_comb_df.iloc[np.argsort(rxn_comb_df[target_col_name].to_numpy())[::-1][:topk]]

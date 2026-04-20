@@ -12,6 +12,7 @@ build/
 develop-eggs/
 dist/
 downloads/
+dev/
 eggs/
 .eggs/
 lib/
@@ -20,6 +21,7 @@ parts/
 sdist/
 var/
 wheels/
+MolOP-main/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
