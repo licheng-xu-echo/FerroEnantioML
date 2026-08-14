@@ -65,6 +65,19 @@ python feat_sel.py
 6. read the feature selection results, optimize the top‑k parameter for similar reactions, and perform reaction recommendation prediction upon completion of parameter optimization ([dist_method_topk_opt_and_recommend.ipynb](https://github.com/licheng-xu-echo/FerroEnantioML/blob/main/scripts/dist_method_topk_opt_and_recommend.ipynb))
 7. conduct baseline tests that comprise: (a) direct prediction using the training set's median and mean values, and (b) models utilizing one-hot encoded features as descriptors. ([run_baseline.ipynb](https://github.com/licheng-xu-echo/FerroEnantioML/blob/main/scripts/run_baseline.ipynb))
 8. perform out-of-sample prediction for ligands and solvents; then, remove training samples with ee > 90% before conducting reaction recommendation ([oos_prediction.ipynb](https://github.com/licheng-xu-echo/FerroEnantioML/blob/main/scripts/oos_prediction.ipynb))
+9. perform fully nested validation for the final TS + GB workflow, using inner cross-validation for hyperparameter / nearest-neighbor selection and outer leave-one-out cross-validation for performance estimation ([nested_screen.py](https://github.com/licheng-xu-echo/FerroEnantioML/blob/main/scripts/nested_screen.py))
+```bash
+cd scripts
+python nested_screen.py \
+  --screen ferr_lig \
+  --task-ids 1 \
+  --inner-folds 3 \
+  --overwrite
+# the results will be saved in the folder "results/nested"
+```
+10. summarize and visualize the GB + TS nested-validation results, including regression scatter plots for reviewer-response analyses ([gb_ts_nested_validation.ipynb](https://github.com/licheng-xu-echo/FerroEnantioML/blob/main/scripts/gb_ts_nested_validation.ipynb))
+11. analyze the feature importance of the final optimized model by averaging feature importances from the base and delta Gradient Boosting models across LOO splits ([final_model_feature_importance.ipynb](https://github.com/licheng-xu-echo/FerroEnantioML/blob/main/scripts/final_model_feature_importance.ipynb))
+12. compare xTB- and DFT-optimized transition-state geometries, including all-atom RMSD, descriptor-relevant steric-atom RMSD, and xTB-vs-DFT steric descriptor correlations ([xtb_dft_structure_steric_comparison.ipynb](https://github.com/licheng-xu-echo/FerroEnantioML/blob/main/scripts/xtb_dft_structure_steric_comparison.ipynb))
 
 ## Citation
 This paper is currently under review.

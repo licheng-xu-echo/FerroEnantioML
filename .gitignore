@@ -210,3 +210,6 @@ __marimo__/
 # 
 temp/
 MolOP-main/
+manuscript
+xtb_dft_comparation/results
+scripts/results/nested
